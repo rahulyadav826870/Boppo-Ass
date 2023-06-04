@@ -56,6 +56,7 @@ export default function UserDetailsTable({
   const finalRef = useRef(null);
 
   const [loading,setLoading] =useState(false)
+  const [loading1,setLoading1] =useState(false)
 
   const [editUserId, setEditUserId] = useState(null);
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -218,7 +219,7 @@ export default function UserDetailsTable({
   };
 
   const handleDelete = (id) => {
-    setLoading(true)
+    setLoading1(true)
     return axios.delete(`https://boppoapi.onrender.com/user/delete/${id}`)
       .then((res) => {
         // console.log(res.data.msg);
@@ -230,7 +231,7 @@ export default function UserDetailsTable({
           isClosable: true,
  
         });
-        setLoading(false)
+        setLoading1(false)
         getData();
       });
   };
@@ -278,7 +279,7 @@ export default function UserDetailsTable({
                 padding={{ base: 2, md: 4 }}
                 onClick={() => handleDelete(_id)}
               >
-               {loading ?  <Spinner
+               {loading1 ?  <Spinner
                 thickness="3px"
                 speed="0.65s"
                 emptyColor="gray.200"

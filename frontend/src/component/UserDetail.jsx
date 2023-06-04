@@ -424,7 +424,7 @@ export default function UserDetails() {
               <Th pl={{ base: "0px", md: "20px" }}>Action</Th>
             </Tr>
           </Thead>
-          <Text m={2} ml={0}>
+          <Text m={2} ml={4}>
             {" "}
             {length === 0 ? "No User" : "Total User : " + length}
           </Text>
